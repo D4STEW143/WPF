@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_DataBase_Homework"
         mc:Ignorable="d"
-        Title="Academy DB" Height="720" Width="1280" ResizeMode="NoResize"
+        Title="Academy DB" Height="850" Width="1280" ResizeMode="NoResize"
 		Background="Gray">
     <Grid>
 		<!--Grid Defenition-->
@@ -20,14 +20,24 @@
 		</Grid.ColumnDefinitions>
 		
 		<!--Interface-->
+		<TabControl Name="tbTabs" Grid.RowSpan="2" Grid.ColumnSpan="2" Background="Gray" Foreground="Gray">
+			<TabItem Name="Students">
+				<TabItem.Header>
+					<StackPanel>
+						<TextBlock x:Name="tbiStudents" Margin="3">Students</TextBlock>
+					</StackPanel>
+				</TabItem.Header>
+			</TabItem>
+			<TabItem Name="Directions">
+				<TabItem.Header>
+					<StackPanel>
+						<TextBlock x:Name="tbiDirections" Margin="3">Directions</TextBlock>
+					</StackPanel>
+				</TabItem.Header>
+			</TabItem>
+		</TabControl>
 		<!--Row 0 Column 0-->
-		<Menu Height="25" VerticalAlignment="Top" Background="Gray">
-			<MenuItem Name="miDataBase" Header="Data Base" FontFamily="Cascadia Code" FontSize="16">
-				<MenuItem Name="mi_dbConnect" Header="Connect" Background="DarkGray" FontFamily="Cascadia Code" FontSize="16"/>
-				<MenuItem Name="mi_dbReconnect" Header="Recconect" Background="DarkGray" FontFamily="Cascadia Code" FontSize="16"/>
-			</MenuItem>
-			<MenuItem Name="miExit" Header="Exit" FontFamily="Cascadia Code" FontSize="16"/>
-		</Menu>
+		
 		<Label Name="lDirection" Content="Directions:" FontFamily="Cascadia Code"
 			   FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Bottom"
 			   Margin="0,0,0,5"/>
@@ -40,7 +50,14 @@
 		<ListBox Name="lbGroupPicker" Height="25" Width="300" 
 		 HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="370,0,0,5"
 		 Background="DarkGray" FontFamily="Cascadia Code" FontSize="11"/>
+		<!--Row 0 Column 1-->
+		<Label Name="lTimer" Content="Refresh in:" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Cascadia Code" FontSize="18" Foreground="Orange"/>
 		<!--Row 1 Column 0-->
-		<DataGrid Name="dg" Grid.Row="1" Grid.Column="0" Background="Orange" Margin="5,5,5,5"/>
+		<DataGrid Name="dgMainView" Grid.Row="1" Grid.Column="0" Background="LightGray" Margin="5,5,5,5"/>
+		<!--Row 1 Column 1-->
+		<Button Name="btnAdd" Content="Add" Grid.Row="1" Grid.Column="1" Height="25" Width="200" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,10,0,0"/>
+		<Button Name="btnAlter" Content="Alter" Grid.Row="1" Grid.Column="1" Height="25" Width="200" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,50,0,0"/>
+		<Button Name="btnDelete" Content="Delete" Grid.Row="1" Grid.Column="1" Height="25" Width="200" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,90,0,0"/>
+		
 	</Grid>
 </Window>
